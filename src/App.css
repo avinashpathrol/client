@@ -1,38 +1,69 @@
+/* App.css */
 .App {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.gradient-card {
+  background: linear-gradient(to right, #1d4075, rgb(115, 150, 200)); /* Light blue gradient */
+  padding: 20px; /* Adjust as necessary */
+  border-radius: 20px;
+  width: 80%; /* Or whatever width you prefer */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin: 0 auto; /* Center the card */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:45vh; /* Adjust based on content */
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Space between cards */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card {
+  background-color: rgba(255, 255, 255, 0.876); /* Semi-transparent white */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-around;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Optional: subtle border */
 }
 
-.App-link {
-  color: #61dafb;
+.card.dropdown, .card.weather {
+  width: 20%; /* Set the width for the smaller cards */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card.details {
+  width: 55%; /* Set the width for the wider middle card */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gradient-card {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card.dropdown, .card.details, .card.weather {
+    width: 100%;
+    margin-bottom: 10px;
   }
 }

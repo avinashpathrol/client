@@ -18,12 +18,14 @@ function CitySelector({ onCitySelect }) {
   };
 
   return (
-    <select onChange={handleChange} defaultValue="">
-      <option value="" disabled>Select a city</option>
-      {cities.map((city) => (
-        <option key={city.name} value={city.name}>{city.label}</option>
-      ))}
-    </select>
+    <div className="select-container">
+      <select onChange={handleChange} defaultValue="">
+        <option value="" disabled>Select a city</option>
+        {cities.map((city) => (
+          <option key={city.name} value={city.name}>{city.label}</option>
+        ))}
+      </select>
+    </div>
   );
 }
 
