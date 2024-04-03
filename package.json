@@ -16,11 +16,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test src/test/",
     "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build",
-    "predeploy": "npm run build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "homepage": "https://avinashpathrol.github.io/client/",
-  
   "eslintConfig": {
     "extends": [
       "react-app",
