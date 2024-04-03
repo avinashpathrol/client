@@ -2,7 +2,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import CitySelector from '../components/CitySelector';
 
-// Setup a global fetch mock
+
 beforeEach(() => {
   global.fetch = jest.fn(() =>
     Promise.resolve({
@@ -11,7 +11,6 @@ beforeEach(() => {
   );
 });
 
-// Reset the mock after each test
 afterEach(() => {
   jest.clearAllMocks();
 });
@@ -36,10 +35,9 @@ describe('CitySelector', () => {
     const mockOnCitySelect = jest.fn();
     render(<CitySelector onCitySelect={mockOnCitySelect} />);
 
-    await waitFor(() => userEvent.selectOptions(
-      screen.getByRole('combobox'), 
-      screen.getByRole('option', { name: 'City 1' }).value
-    ));
+    await waitFor(() => {
+      userEvent.selectOptions(screen.getByRole('combobox'), 'city1');
+    });
 
     expect(mockOnCitySelect).toHaveBeenCalledWith({ name: 'city1', label: 'City 1' });
   });
