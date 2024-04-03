@@ -5,7 +5,7 @@ function CitySelector({ onCitySelect }) {
 
   useEffect(() => {
     // Fetch cities from the backend
-    fetch('http://localhost:3001/api/cities')
+    fetch('https://frozen-sea-07084-acf2dc3cd045.herokuapp.com/api/cities')
       .then(response => response.json())
       .then(setCities)
       .catch(console.error);

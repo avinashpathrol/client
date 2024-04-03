@@ -9,7 +9,7 @@ function WeatherDetails({ city }) {
       if (!city || !city.label) return;
 
       try {
-        const weatherResponse = await fetch(`http://localhost:3001/weather/${encodeURIComponent(city.label)}`);
+        const weatherResponse = await fetch(`https://frozen-sea-07084-acf2dc3cd045.herokuapp.com/weather/${encodeURIComponent(city.label)}`);
         const weatherData = await weatherResponse.json();
         if (!weatherResponse.ok) throw new Error(weatherData.message || 'Failed to fetch weather data');
         setWeather(weatherData);
