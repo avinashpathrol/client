@@ -30,7 +30,9 @@ function App() {
           </div>
           
           <div className="card weather">
-            {selectedCity && <WeatherDetails city={selectedCity} />}
+            {selectedCity ?( <WeatherDetails city={selectedCity} />
+            ):(<p>Weather Details</p>)  
+          }
           </div>
         </div>
       </div>

@@ -16,12 +16,22 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   margin: 0 auto; /* Center the card */
   display: flex;
+  position: relative; /* Add this if not already present */
   justify-content: center;
   align-items: center;
   height:45vh; /* Adjust based on content */
   box-sizing: border-box;
 }
-
+.heading {
+  text-align: center;
+  position: absolute; /* Position it absolutely within the gradient-card */
+  width: 100%; /* Take the full width to center correctly */
+  top: 1%; /* Position at the top */
+  transform: translateY(-50%); /* Adjust to your liking */
+  font-size: 2rem; /* Adjust size as needed */
+  color: #fff; /* Adjust text color as needed */
+  /* Add more styles if you want */
+}
 .card-container {
   width: 100%;
   display: flex;
