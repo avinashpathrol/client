@@ -12,9 +12,8 @@ function CitySelector({ onCitySelect }) {
   }, []);
 
   const handleChange = (event) => {
-    // Find the full city object matching the selected value
     const city = cities.find(c => c.name === event.target.value);
-    onCitySelect(city); // Pass the entire city object to the handler
+    onCitySelect(city); 
   };
 
   return (

@@ -24,12 +24,10 @@ function WeatherDetails({ city }) {
 
   if (error) return <p>{error}</p>;
 
-  // Update component to match your API's response structure
   if (!weather || !weather.weather || weather.weather.length === 0) {
     return <p>Loading weather...</p>;
   }
 
-  // Assuming temperature is in Kelvin (common for many APIs), convert to Celsius
   const tempCelsius = (weather.main.temp - 273.15).toFixed(2);
 
   return (
@@ -38,7 +36,6 @@ function WeatherDetails({ city }) {
       <p>{weather.weather[0].description}</p>
       <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`} alt="Weather icon" />
       <p>Temperature: {tempCelsius}°C</p>
-      {/* Display more weather details as needed */}
     </div>
   );
 }

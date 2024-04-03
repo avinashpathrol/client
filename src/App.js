@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <div className="gradient-card">
-      <h1 className="heading">Travel Planner</h1> {/* Add this line */}
+      <h1 className="heading">Travel Planner</h1> 
         <div className="card-container">
           <div className="card dropdown">
             <CitySelector onCitySelect={handleCitySelect} />
